@@ -6,6 +6,7 @@ import cors from 'cors';// Middleware for handling cross-origin requests
 import bodyParser from 'body-parser';// Middleware for parsing request body
 import axios from "axios";// To verify reCAPTCHA
 
+
 // Initialize Express app
 const app = express();
 
