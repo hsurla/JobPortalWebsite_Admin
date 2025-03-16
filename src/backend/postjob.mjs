@@ -10,7 +10,7 @@ const PORT = 5000;
 
 // Middleware
 app.use(cors({
-  origin: "https://jobportalwebsite-admin.vercel.app/",
+  origin: "https://jobportalwebsite-admin.vercel.app",
   credentials: true,
 }));
 app.use(bodyParser.json());
