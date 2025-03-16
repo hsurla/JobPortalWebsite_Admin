@@ -37,12 +37,12 @@ const AdminDashboard = () => {
       }
   
       // Fetching active job posts count specific to the admin
-      const jobsResponse = await axios.get(`http://localhost:5000/jobs?email=${storedAdminEmail}`);
+      const jobsResponse = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/jobs?email=${storedAdminEmail}`);
       const jobs = jobsResponse.data;
       setJobCount(jobs.length); // Updating job count
   
       // Fetching total and new applications count
-      const applicationsResponse = await axios.get(`http://localhost:5000/applications-count?company=${storedAdminName}`);
+      const applicationsResponse = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/applications-count?company=${storedAdminName}`);
       setTotalApplications(applicationsResponse.data.totalApplications);// Updating total applications count
       setNewApplications(applicationsResponse.data.newApplications);// Updating new applications count
   

@@ -14,7 +14,7 @@ const ViewApplications = () => {
         const adminName = localStorage.getItem("adminName"); // Retrieve admin name from localStorage
         if (!adminName) throw new Error("Admin name not found in local storage.");
 
-        const response = await fetch(`http://localhost:5000/job-applications?company=${adminName}`); // API call to fetch job applications
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/job-applications?company=${adminName}`); // API call to fetch job applications
         if (!response.ok) throw new Error("Failed to fetch applications.");
 
         const data = await response.json();
@@ -32,7 +32,7 @@ const ViewApplications = () => {
   // Function to update the status of an application
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/job-applications/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/job-applications/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),
@@ -56,7 +56,7 @@ const ViewApplications = () => {
     }
   
     try {
-      const response = await fetch(`http://localhost:5000/resume/${email}`);// Fetch resume from backend
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/resume/${email}`);// Fetch resume from backend
   
       if (!response.ok) {
         const errorData = await response.json();

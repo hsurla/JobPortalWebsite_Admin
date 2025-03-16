@@ -23,7 +23,7 @@ const AccountSettings = () => {
   useEffect(() => {
     const fetchAdminDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/admin/${email}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/admin/${email}`);
         setPhone(response.data.phone || "");
         setAddress(response.data.address || "");
       } catch (error) {
@@ -44,7 +44,7 @@ const AccountSettings = () => {
       const email = localStorage.getItem("adminEmail");
   
       // Send updated phone and address data to the backend
-      await axios.put(`http://localhost:5001/admin/update/${email}`, {
+      await axios.put(`${import.meta.env.VITE_API_BASE_URL}/admin/update/${email}`, {
         phone,
         address,
       });
@@ -76,7 +76,7 @@ const AccountSettings = () => {
       const email = localStorage.getItem("adminEmail");
   
       // Send password update request to the backend
-      await axios.put(`http://localhost:5001/admin/update-password/${email}`, {
+      await axios.put(`${import.meta.env.VITE_API_BASE_URL}/admin/update-password/${email}`, {
         currentPassword,
         newPassword,
       });
@@ -108,7 +108,7 @@ const AccountSettings = () => {
   
     try {
       // Delete the account from the database
-      const response = await axios.delete(`http://localhost:5001/admin/delete/${encodeURIComponent(email)}`);
+      const response = await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/admin/delete/${encodeURIComponent(email)}`);
       console.log("Delete response:", response.data);
       
       // Clear local storage and redirect to login page

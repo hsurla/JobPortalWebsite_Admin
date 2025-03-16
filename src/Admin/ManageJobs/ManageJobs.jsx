@@ -10,7 +10,7 @@ const ManageJobs = () => {
     const fetchJobs = async () => {
         try {
             const email = localStorage.getItem("adminEmail");// Retrieve admin email from localStorage
-            const response = await fetch(`http://localhost:5000/jobs?email=${email}`);// API call to fetch jobs
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/jobs?email=${email}`);// API call to fetch jobs
             const data = await response.json();
             setJobs(data);// Update state with fetched job listings
         } catch (error) {
@@ -25,7 +25,7 @@ const ManageJobs = () => {
     if (!window.confirm("Are you sure you want to delete this job?")) return;// Confirm deletion
 
     try {
-      await axios.delete(`http://localhost:5000/jobs/${id}`);// API call to delete job
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/jobs/${id}`);// API call to delete job
       setJobs(jobs.filter((job) => job.id !== id)); // Update state to reflect the deleted job
       alert("Job deleted successfully!");// Show success message
     } catch (error) {

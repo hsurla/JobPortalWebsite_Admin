@@ -10,7 +10,10 @@ import axios from "axios";// To verify reCAPTCHA
 const app = express();
 
 // Middleware
-app.use(cors());// Enable CORS to allow frontend to communicate with backend
+app.use(cors({
+  origin: "https://jobportalwebsite-admin.vercel.app/",
+  credentials: true,
+}));// Enable CORS to allow frontend to communicate with backend
 app.use(bodyParser.json()); // Parse incoming JSON requests
 
 // MongoDB connection

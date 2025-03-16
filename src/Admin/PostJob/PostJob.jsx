@@ -59,7 +59,7 @@ const PostJob = () => {
 
     try {
       // Send a POST request to the backend to save the job
-      const response = await fetch("http://localhost:5000/save-job", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/save-job`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

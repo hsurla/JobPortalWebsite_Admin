@@ -49,7 +49,7 @@ const AdminRegistration = () => {
 
     try {
       // Sending registration data to the server
-      const response = await fetch("http://localhost:5001/register-admin", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/register-admin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
