@@ -13,6 +13,7 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: "https://jobportalwebsite-admin.vercel.app",
+  methods:["GET","POST","PUT","DELETE"],
   credentials: true,
 }));// Enable CORS to allow frontend to communicate with backend
 app.use(bodyParser.json()); // Parse incoming JSON requests
