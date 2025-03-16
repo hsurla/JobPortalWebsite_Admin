@@ -1,0 +1,96 @@
+.applications-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.applications-table th,
+.applications-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.applications-table th {
+  background-color: #6200ea;
+  font-weight: bold;
+}
+
+.status {
+  text-transform: capitalize;
+}
+
+.status.pending {
+  color: #ff9800;
+}
+
+.status.reviewed {
+  color: #2196f3;
+}
+
+.status.accepted {
+  color: #4caf50;
+}
+
+.status.rejected {
+  color: #f44336;
+}
+
+.no-results {
+  text-align: center;
+  color: #888;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error {
+  color: #f44336;
+}
+
+th{
+  color: white;
+}
+
+.back-btn {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 26px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #4500b5;
+}
