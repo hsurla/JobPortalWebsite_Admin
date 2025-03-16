@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing Route and Routes from react-router-dom for navigation
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 // Importing admin-related pages/components
 import AdminPage from "./Admin/AdminRegistration/AdminRegistration";
@@ -17,6 +17,7 @@ import ViewApplications from "./Admin/ViewApplications/ViewApplications";
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/admin-login" />} />
       <Route path="/admin-account-settings" element={<AdminAccSettings />} />
       <Route path="/post-job" element={<PostJob />} />
       <Route path="/admin-register" element={<AdminPage />} />
