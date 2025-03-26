@@ -11,6 +11,7 @@ const AdminDashboard = () => {
   const [jobCount, setJobCount] = useState(0); // Count of active job posts
   const [totalApplications, setTotalApplications] = useState(0);// Count of total applications
   const [newApplications, setNewApplications] = useState(0);// Count of new applications
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu visibility
   const navigate = useNavigate();// Hook for navigation
 
   useEffect(() => {
@@ -63,14 +64,15 @@ const AdminDashboard = () => {
       {/* Navigation Bar */}
       <nav className="navbar">
         <h1 className="navbar-title">Admin Dashboard</h1>
-        <ul className="navbar-menu">
+        <button className="menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          ☰
+        </button>
+        <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
           <li className="menu-item"><Link to="/post-job">Post a Job</Link></li>
           <li className="menu-item"><Link to="/manage-jobs">Manage Jobs</Link></li>
           <li className="menu-item"><Link to="/view-applications">View Applications</Link></li>
           <li className="menu-item"><Link to="/admin-account-settings">Account Settings</Link></li>
-          <li className="menu-item logout">
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
-          </li>
+          <li className="menu-item" onClick={handleLogout}>Logout</li>
         </ul>
       </nav>
 

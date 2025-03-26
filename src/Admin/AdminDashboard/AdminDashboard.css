@@ -19,10 +19,44 @@
   color: white;
 }
 
+/* Menu Button (for Mobile) */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .navbar-menu {
   display: flex;
   list-style-type: none;
   gap: 15px;
+}
+
+/* 🎯 Hide Navbar in Mobile (default) */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block; /* Show the menu button */
+  }
+
+  .navbar-menu {
+    display: none; /* Hide the menu initially */
+    flex-direction: column;
+    background-color: #6200ea;
+    width: 90.5%;
+    margin-left: 15px;
+    text-align: center;
+    padding: 10px 20px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .navbar-menu.active {
+    display: flex; /* Show when active */
+  }
 }
 
 .menu-item {
@@ -171,4 +205,50 @@
   color: #6200ea;
   cursor: pointer;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .navbar {
+    flex-direction: row;
+  }
+
+  .dashboard-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overview-card {
+    width: 90%; /* Center the cards */
+    max-width: 320px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+}
+
+/* 📱 Extra Small Screens */
+@media (max-width: 480px) {
+  .navbar-title {
+    font-size: 1.4rem;
+  }
+
+  .dashboard-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overview-card {
+    width: 100%;
+    max-width: 320px;
+  }
 }

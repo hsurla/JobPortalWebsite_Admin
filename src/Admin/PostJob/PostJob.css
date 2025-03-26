@@ -63,3 +63,32 @@ select:focus {
 .submit-btn:hover {
   background-color: #6200ea;
 }
+
+/* MEDIA QUERIES FOR MOBILE */
+@media (max-width: 768px) {
+  .post-job-container {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .back-btn {
+    font-size: 18px;
+    top: 10px;
+    left: 10px;
+  }
+}

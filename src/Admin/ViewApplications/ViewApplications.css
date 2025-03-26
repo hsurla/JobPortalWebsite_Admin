@@ -94,3 +94,45 @@ th{
 .back-btn:hover {
   background-color: #4500b5;
 }
+
+/* ===== Mobile Styles (Keep Table Visible) ===== */
+@media (max-width: 768px) {
+  .applications-container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  /* Make the table scrollable on smaller screens */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .applications-table {
+    min-width: 900px; /* Ensures table doesn't shrink too much */
+  }
+
+  .applications-table th,
+  .applications-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .resume-button {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .back-btn {
+    font-size: 20px;
+    padding: 6px 10px;
+  }
+}

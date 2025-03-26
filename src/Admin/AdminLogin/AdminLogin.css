@@ -89,3 +89,59 @@
 .login-footer .register-link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .login-container {
+    height: auto; /* Allow height to adjust dynamically */
+    padding: 20px; /* Add some padding */
+  }
+
+  .login-form-container {
+    width: 90%; /* Adjust width */
+    padding: 30px; /* Adjust padding */
+  }
+
+  .login-form-container h2 {
+    font-size: 1.6rem; /* Adjust heading size */
+  }
+
+  .login-form-container p {
+    font-size: 1rem; /* Adjust text size */
+  }
+
+  .form-group input {
+    font-size: 1rem; /* Slightly smaller input text */
+    padding: 10px; /* Adjust input padding */
+  }
+
+  .login-button {
+    font-size: 1rem; /* Adjust button text size */
+    padding: 12px; /* Adjust button padding */
+  }
+
+  .login-footer {
+    font-size: 0.9rem; /* Adjust footer text size */
+  }
+}
+
+/* 📲 Smaller Mobile Screens (for screens smaller than 480px) */
+@media (max-width: 480px) {
+  .login-form-container {
+    width: 95%; /* Expand width */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .login-form-container h2 {
+    font-size: 1.4rem; /* Reduce heading size further */
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .login-button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
